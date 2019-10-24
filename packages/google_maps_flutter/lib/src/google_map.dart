@@ -301,7 +301,7 @@ class _GoogleMapState extends State<GoogleMap> {
     assert(markerIdParam != null);
     final MarkerId markerId = MarkerId(markerIdParam);
     if (_markers[markerId]?.onTap != null) {
-      _markers[markerId].onTap();
+      _markers[markerId].onTap(markerId);
     }
   }
 
@@ -316,7 +316,7 @@ class _GoogleMapState extends State<GoogleMap> {
   void onPolygonTap(String polygonIdParam) {
     assert(polygonIdParam != null);
     final PolygonId polygonId = PolygonId(polygonIdParam);
-    _polygons[polygonId].onTap();
+    _polygons[polygonId].onTap(polygonId);
   }
 
   void onPolylineTap(String polylineIdParam) {
@@ -330,7 +330,7 @@ class _GoogleMapState extends State<GoogleMap> {
   void onCircleTap(String circleIdParam) {
     assert(circleIdParam != null);
     final CircleId circleId = CircleId(circleIdParam);
-    _circles[circleId].onTap();
+    _circles[circleId].onTap(circleId);
   }
 
   void onInfoWindowTap(String markerIdParam) {

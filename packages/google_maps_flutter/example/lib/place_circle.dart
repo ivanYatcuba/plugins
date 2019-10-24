@@ -88,7 +88,7 @@ class PlaceCircleBodyState extends State<PlaceCircleBody> {
       strokeWidth: 5,
       center: _createCenter(),
       radius: 50000,
-      onTap: () {
+      onTap: (CircleId circleId) {
         _onCircleTapped(circleId);
       },
     );

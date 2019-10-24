@@ -87,7 +87,7 @@ class PlacePolygonBodyState extends State<PlacePolygonBody> {
       strokeWidth: 5,
       fillColor: Colors.green,
       points: _createPoints(),
-      onTap: () {
+      onTap: (PolygonId polygonId) {
         _onPolygonTapped(polygonId);
       },
     );

@@ -91,7 +91,7 @@ class Polygon {
   final int zIndex;
 
   /// Callbacks to receive tap events for polygon placed on this map.
-  final VoidCallback onTap;
+  final void Function(PolygonId polygonId) onTap;
 
   /// Creates a new [Polygon] object whose values are the same as this instance,
   /// unless overwritten by the specified parameters.
@@ -104,7 +104,7 @@ class Polygon {
     int strokeWidthParam,
     bool visibleParam,
     int zIndexParam,
-    VoidCallback onTapParam,
+    Function(PolygonId polygonId) onTapParam,
   }) {
     return Polygon(
       polygonId: polygonId,
@@ -163,8 +163,7 @@ class Polygon {
         visible == typedOther.visible &&
         strokeColor == typedOther.strokeColor &&
         strokeWidth == typedOther.strokeWidth &&
-        zIndex == typedOther.zIndex &&
-        onTap == typedOther.onTap;
+        zIndex == typedOther.zIndex;
   }
 
   @override

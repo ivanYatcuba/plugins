@@ -85,7 +85,7 @@ class Circle {
   final int zIndex;
 
   /// Callbacks to receive tap events for circle placed on this map.
-  final VoidCallback onTap;
+  final void Function(CircleId circleId) onTap;
 
   /// Creates a new [Circle] object whose values are the same as this instance,
   /// unless overwritten by the specified parameters.
@@ -98,7 +98,7 @@ class Circle {
     int strokeWidthParam,
     bool visibleParam,
     int zIndexParam,
-    VoidCallback onTapParam,
+    Function(CircleId circleId) onTapParam,
   }) {
     return Circle(
       circleId: circleId,
@@ -152,8 +152,7 @@ class Circle {
         strokeColor == typedOther.strokeColor &&
         strokeWidth == typedOther.strokeWidth &&
         visible == typedOther.visible &&
-        zIndex == typedOther.zIndex &&
-        onTap == typedOther.onTap;
+        zIndex == typedOther.zIndex;
   }
 
   @override

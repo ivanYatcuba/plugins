@@ -111,7 +111,7 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
         center.longitude + cos(_markerIdCounter * pi / 6.0) / 20.0,
       ),
       infoWindow: InfoWindow(title: markerIdVal, snippet: '*'),
-      onTap: () {
+      onTap: (MarkerId markerId) {
         _onMarkerTapped(markerId);
       },
       onDragEnd: (LatLng position) {

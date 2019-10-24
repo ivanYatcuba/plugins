@@ -215,7 +215,7 @@ class Marker {
   final double zIndex;
 
   /// Callbacks to receive tap events for markers placed on this map.
-  final VoidCallback onTap;
+  final Function(MarkerId markerId)  onTap;
 
   final ValueChanged<LatLng> onDragEnd;
 
@@ -233,7 +233,7 @@ class Marker {
     double rotationParam,
     bool visibleParam,
     double zIndexParam,
-    VoidCallback onTapParam,
+    Function(MarkerId markerId) onTapParam,
     ValueChanged<LatLng> onDragEndParam,
   }) {
     return Marker(
@@ -297,8 +297,7 @@ class Marker {
         position == typedOther.position &&
         rotation == typedOther.rotation &&
         visible == typedOther.visible &&
-        zIndex == typedOther.zIndex &&
-        onTap == typedOther.onTap;
+        zIndex == typedOther.zIndex;
   }
 
   @override
